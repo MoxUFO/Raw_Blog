@@ -20,7 +20,9 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/')
+      console.log('login good ready for homepage');
+      document.location.replace('/');
+
     } else {
       alert(response.statusText);
     }
@@ -51,13 +53,16 @@ if (!userName || !signUpEmail || !password || !confirmPassword) {
     });
 
     if (response.ok) {
-      console.log('ready for homepage');
+      // console.log(' sign up good, ready for homepage');
       document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   }
 };
+
+
+
 
 document.getElementById('log-in-btn').addEventListener('click', loginFormHandler);
 

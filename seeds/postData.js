@@ -4,12 +4,12 @@ const postData = [
   {
     post_title: 'Test Post 1',
     post_text: 'this is pretty dope if it works',
-    user_id: 1,
+    user_id: 2,
   },
   {
     post_title: 'Test Post 2',
     post_text: 'I hope it does!',
-    user_id: 2,
+    user_id: 1,
   },
   {
     post_title: 'Test Post 3 ',
