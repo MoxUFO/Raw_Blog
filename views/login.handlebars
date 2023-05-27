@@ -1,14 +1,16 @@
     <main class="log-in">
         <h1 class="text-success"> Login</h1>
-        <input class="form-control form-control-lg" type="text" placeholder="Email" >
-        <input class="form-control form-control-lg" type="text" placeholder="Password" >
+        <input type="email" class="form-control form-control-lg" id="log-in-email" type="text" placeholder="Email" >
+        <input type="password" class="form-control form-control-lg" id="log-in-pw" type="text" placeholder="Password" >
         <h1 class="text-success sign-up-marg"> Sign up</h1>
-        <input class="form-control form-control-lg" type="text" placeholder="Email" >
-        <input class="form-control form-control-lg" type="text" placeholder="User name" >
-        <input class="form-control form-control-lg" type="text" placeholder="Password" >
-        <input class="form-control form-control-lg" type="text" placeholder="Confirm Password" >
+        <input type="email" class="form-control form-control-lg" id="sign-up-email" type="text" placeholder="Email" >
+        <input type="text" class="form-control form-control-lg" id="username" type="text" placeholder="User name" >
+        <input type="password" class="form-control form-control-lg" id="sign-up-pw" type="text" placeholder="Password" >
+        <input type="password" class="form-control form-control-lg" id="sign-up-pw-confirm" type="text" placeholder="Confirm Password" >
         <div class="d-grid gap-2 d-md-block">
-            <button class="btn btn-success" type="button">Login</button>
-            <button class="btn btn-success" type="button">Sign up</button>
+            <button class="btn btn-success" id="log-in-btn" type="button">Login</button>
+            <button class="btn btn-success" id="sign-up-btn" type="button">Sign up</button>
         </div>
     </main>
+
+    <script src="/js/login.js"></script>
