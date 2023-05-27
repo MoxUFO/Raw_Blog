@@ -11,7 +11,11 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment_text: {
+    post_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    post_text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,20 +27,12 @@ Post.init(
         key: "id",
       },
     },
-    bio_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "bio",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "blog",
+    modelName: "post",
   }
 );
 

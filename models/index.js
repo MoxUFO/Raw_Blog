@@ -12,4 +12,4 @@ User.hasOne(Post, {
 
 
 
-module.exports = { User, Blog ,Comment };
+module.exports = { User,Comment, Post };
