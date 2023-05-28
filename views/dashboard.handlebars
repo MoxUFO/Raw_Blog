@@ -1,13 +1,15 @@
     <nav class="tablets">
         <ul class="nav justify-content-end nav-underline">
             <li class="nav-item">
-              <a class="nav-link active text-success" href="#">Homepage</a>
+              <a class="nav-link active text-success" href="/">Homepage</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-success" href="#">Logout</a>
+              <a class="nav-link active text-success" id="log-out-btn" href="">Logout</a>
             </li>
         </ul>
     </nav>
     <main class="all-post">
-{{!-- dashboard details --}}
+{{#each posts as |post|}}
+{{>dashboard-details}}
+{{/each}}
     </main>
