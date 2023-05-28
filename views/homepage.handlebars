@@ -1,5 +1,8 @@
     <nav class="tablets">
         <ul class="nav justify-content-end nav-underline">
+          <li class="nav-item">
+              <a class="nav-link active text-success" href="post/create">Write a post</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link active text-success" href="/dashboard">Dash board</a>
             </li>
@@ -7,7 +10,7 @@
               <a class="nav-link active text-success" id="log-out-btn" href="">Logout</a>
             </li>
         </ul>
-    </nav>
+    </nav> 
     <main class="all-post">
 {{#each posts as |post|}}
 {{>homepage-details}}

@@ -8,7 +8,7 @@ try {
   const postsData = await Post.findByPk(req.params.postId,{
    
   })
-  console.log(postsData);
+  // console.log(postsData);
   const soloPost = postsData.get({plain:true})
   res.render('post', {
     soloPost,
@@ -18,6 +18,10 @@ try {
   console.log(error);
 }
 });
+
+router.get('/create' ,withAuth, async (req, res) => {
+  res.render('makepost');
+  });
 
 
 

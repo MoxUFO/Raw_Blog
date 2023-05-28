@@ -12,20 +12,12 @@
         </ul>
       </nav>
       <main class="all-post">
-          <div class="card one-post">
-            <div class="card-header">{{soloPost.post_title}}</div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>{{soloPost.post_text}}</p>
-                <footer class="blockquote-footer">{{user.username}}</footer>
-              </blockquote>
-            </div>
-          </div>
+        <input type="text" class="form-control form-control-lg" id="log-in-email" type="text" placeholder="Post title" >
+        <input type="text" class="form-control form-control-lg" id="log-in-pw" type="text" placeholder="Post body" >
       </main>
       <section class="com-sec">
           <div class="d-grid gap-2">
-              <button class="btn btn-success" type="button">Delete post</button>
-              <button class="btn btn-success" type="button">Make comment</button>
+              <button class="btn btn-success" type="button">Submit post</button>
             </div>  
       </section>
       <section class="com-sec">
