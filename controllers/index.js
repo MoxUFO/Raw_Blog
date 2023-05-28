@@ -8,7 +8,7 @@ const postRoutes = require('./post');
 
 router.use('/', homeRoutes);
 // router.use('/comment', commentRoutes);
-// router.use('/post', postRoutes);
+router.use('/post', postRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/api', apiRoutes);
 

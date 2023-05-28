@@ -1,23 +1,23 @@
     <nav class="tablets">
         <ul class="nav justify-content-end nav-underline">
           <li class="nav-item">
-            <a class="nav-link active text-success" href="#">Homepage</a>
+            <a class="nav-link active text-success" href="/">Homepage</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-success " href="#">Dash board</a>
+            <a class="nav-link active text-success " href="/dashboard">Dash board</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-success" href="#">Logout</a>
+            <a class="nav-link active text-success" id="log-out-btn" href="">Logout</a>
           </li>
         </ul>
       </nav>
       <main class="all-post">
           <div class="card one-post">
-            <div class="card-header">Cool Beans Title</div>
+            <div class="card-header">{{soloPost.post_title}}</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>A well-known quote, contained in a blockquote element.</p>
-                <footer class="blockquote-footer">Nelson Foster</footer>
+                <p>{{soloPost.post_text}}</p>
+                <footer class="blockquote-footer">{{user.username}}</footer>
               </blockquote>
             </div>
           </div>
@@ -31,3 +31,5 @@
       <section class="com-sec">
         {{!-- post deets --}}
       </section>
+
+      <script src="/js/logout.js"></script>
