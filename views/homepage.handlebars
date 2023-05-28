@@ -9,7 +9,9 @@
         </ul>
     </nav>
     <main class="all-post">
-{{!-- homepage details --}}
+{{#each posts as |post|}}
+{{>homepage-details}}
+{{/each}}
     </main>
 
 

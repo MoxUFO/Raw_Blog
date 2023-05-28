@@ -10,7 +10,7 @@ try {
   })
   const posts = postsData.map((post)=> post.get({plain:true}))
   res.render('homepage', {
-    ...posts,
+    posts,
     logged_in: true
   })
 } catch (error) {
