@@ -17,19 +17,21 @@
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p>{{soloPost.post_text}}</p>
-                <footer class="blockquote-footer">{{user.username}}</footer>
+                <footer class="blockquote-footer">{{soloPost.username}}</footer>
               </blockquote>
             </div>
           </div>
       </main>
       <section class="com-sec">
           <div class="d-grid gap-2">
-              <button class="btn btn-success" type="button">Delete post</button>
-              <button class="btn btn-success" type="button">Make comment</button>
+           <button class="btn btn-success" type="button">Delete Post</button>
+            <button class="btn btn-success" id="make-comment" type="button">Make comment</button>
             </div>  
       </section>
       <section class="com-sec">
         {{!-- post deets --}}
       </section>
 
+
+    <script src="/js/comments.js"></script>
       <script src="/js/logout.js"></script>

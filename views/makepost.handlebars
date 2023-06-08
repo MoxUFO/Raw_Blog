@@ -12,16 +12,17 @@
         </ul>
       </nav>
       <main class="all-post">
-        <input type="text" class="form-control form-control-lg" id="log-in-email" type="text" placeholder="Post title" >
-        <input type="text" class="form-control form-control-lg" id="log-in-pw" type="text" placeholder="Post body" >
+        <input type="text" class="form-control form-control-lg" id="post-title" type="text" placeholder="Post title" >
+        <textarea type="text" style="height: 100px" class="form-control form-control-lg" id="post-body" type="text" placeholder="Post body" ></textarea>
       </main>
       <section class="com-sec">
           <div class="d-grid gap-2">
-              <button class="btn btn-success" type="button">Submit post</button>
+              <button class="btn btn-success" id="submit-post" type="button">Submit post</button>
             </div>  
       </section>
       <section class="com-sec">
         {{!-- post deets --}}
       </section>
 
+      <script src="/js/submitpost.js"></script>
       <script src="/js/logout.js"></script>
