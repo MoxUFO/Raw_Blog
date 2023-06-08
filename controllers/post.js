@@ -6,10 +6,16 @@ router.get('/:postId' ,withAuth, async (req, res) => {
   // console.log('connected to homepage route');
 try {
   const postsData = await Post.findByPk(req.params.postId,{
-   
+    include: [
+      {
+        model:User,
+        attributes: ['username']
+      }
+     ]
   })
   // console.log(postsData);
   const soloPost = postsData.get({plain:true})
+  console.log(soloPost);
   res.render('post', {
     soloPost,
     logged_in: true,

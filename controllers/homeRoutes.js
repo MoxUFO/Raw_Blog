@@ -15,7 +15,7 @@ try {
    ]
   })
   const posts = postsData.map((post)=> post.get({plain:true}))
-  console.log(posts);
+  // console.log(posts);
   res.render('homepage', {
     posts,
     logged_in: true

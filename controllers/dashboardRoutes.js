@@ -6,7 +6,12 @@ router.get('/' ,withAuth, async (req, res) => {
   // console.log('connected to homepage route');
 try {
   const postsData = await Post.findAll({
-  
+    include: [
+      {
+        model:User,
+        attributes: ['username']
+      }
+     ]
   })
   const posts = postsData.map((post)=> post.get({plain:true}))
   res.render('dashboard', {
