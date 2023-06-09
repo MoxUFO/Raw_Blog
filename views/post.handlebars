@@ -29,7 +29,9 @@
             </div>  
       </section>
       <section class="com-sec">
-        {{!-- post deets --}}
+        {{#each comments as | comment| }}
+        {{> post-details}}
+        {{/each}}
       </section>
 
 

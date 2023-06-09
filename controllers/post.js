@@ -13,11 +13,23 @@ try {
       }
      ]
   })
+  const commentData = await Comment.findAll({
+    where: { post_id : req.params.postId},
+    include: [
+      {
+        model:User,
+        attributes: ['username']
+      }
+     ]
+  })
+  const comments = commentData.map((comment) => comment.get({plain: true}))
+  console.log(comments);
   // console.log(postsData);
   const soloPost = postsData.get({plain:true})
-  console.log(soloPost);
+  // console.log(soloPost);
   res.render('post', {
     soloPost,
+    comments,
     logged_in: true,
     userId: req.session.user_id
   })
@@ -35,9 +47,9 @@ router.get('/:postId/comment' ,withAuth, async (req, res) => {
     console.log('making comment');
     try {
       const newComment = await Comment.create({
-        ...req.body,
+        comment_text: req.body.comment_text,
         user_id: req.session.user_id,
-        post_id: req.body.params
+        post_id: req.params.postId
       });
   
       res.status(200).json(newComment);
