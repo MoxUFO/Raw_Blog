@@ -5,8 +5,10 @@
               {{comment_text}}
               </p>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                {{#if user.id }}
                 <button class="btn btn-success me-md-2" type="button">Edit Comment</button>
                 <button class="btn btn-success" type="button">delete comment</button>
+                {{/if}}
               </div>
             </div>
           </div>

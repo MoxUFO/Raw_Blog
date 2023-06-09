@@ -18,7 +18,7 @@ try {
     include: [
       {
         model:User,
-        attributes: ['username']
+        attributes: ['username', 'id']
       }
      ]
   })
