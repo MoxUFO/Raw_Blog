@@ -30,20 +30,26 @@ try {
     for (let i = 0; i < comments.length; i++) {
       if (req.session.user_id === comments[i].user_id) {
         comments[i] = {...comments[i],isCreator:true}
-        
-
       }
     }
     return comments
   }
   let allComments = filteredComments()
-  console.log(allComments);
+  // console.log(allComments);
 
   // console.log(isCreator);
-  const soloPost = postsData.get({plain:true})
-  // console.log(soloPost);
+  let soloPost = postsData.get({plain:true})
+  const post = () => {
+    if(req.session.user_id === soloPost.user_id){
+       soloPost = {...soloPost, isCreator: true}
+    }
+    return soloPost
+  }
+
+  let thePost = post()
+  console.log(thePost);
   res.render('post', {
-    soloPost,
+    thePost,
     allComments,
     logged_in: true,
     isCreator,
