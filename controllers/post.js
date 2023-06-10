@@ -3,6 +3,7 @@ const { User,Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/:postId' ,withAuth, async (req, res) => {
+  let isCreator;
   // console.log('connected to homepage route');
 try {
   const postsData = await Post.findByPk(req.params.postId,{
@@ -22,15 +23,30 @@ try {
       }
      ]
   })
+ 
+ 
   const comments = commentData.map((comment) => comment.get({plain: true}))
-  console.log(comments);
-  // console.log(postsData);
+  const filteredComments = () => {
+    for (let i = 0; i < comments.length; i++) {
+      if (req.session.user_id === comments[i].user_id) {
+        comments[i] = {...comments[i],isCreator:true}
+        
+
+      }
+    }
+    return comments
+  }
+  let allComments = filteredComments()
+  console.log(allComments);
+
+  // console.log(isCreator);
   const soloPost = postsData.get({plain:true})
   // console.log(soloPost);
   res.render('post', {
     soloPost,
-    comments,
+    allComments,
     logged_in: true,
+    isCreator,
     userId: req.session.user_id
   })
 } catch (error) {
