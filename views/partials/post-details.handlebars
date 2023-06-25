@@ -2,12 +2,11 @@
             <div class='card-header'>made by : {{user.username}}</div>
             <div class='card-body'>
               <p class='card-text'>
-              "{{comment_text}}""
+              "{{comment_text}}"
               </p>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 {{#if isCreator}}
-                <button class="btn btn-success me-md-2" type="button">Edit Comment</button>
-                <button class="btn btn-success" type="button">delete comment</button>
+                <button id="delete-comment" class="btn btn-success" data-comment-code={{id}}  type="button">delete comment</button>
                 {{/if}}
               </div>
             </div>

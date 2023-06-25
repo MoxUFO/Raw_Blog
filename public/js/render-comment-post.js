@@ -39,6 +39,29 @@ const deletePost = async (event)=>{
 
 }
 
-document.getElementById('delete-post'). addEventListener('click', deletePost)
+const deleteComment = async (event) => {
+  event.preventDefault()
+  console.log(event.target.dataset.commentCode);
+  let commentCode = event.target.dataset.commentCode
+  console.log(event.target.dataset.commentCode);
+  const response = await fetch(`/post/${postId}/comment`, {
+    method: 'DELETE',
+    body: JSON.stringify({ commentCode }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  console.log(response);
+  if (response.ok) {
+    console.log('success');
+    document.location.replace(`/post/${postId}`);
+  } else {
+    alert('failed to get!');
+  }
+}
+
+
 document.getElementById('make-comment').addEventListener('click', renderComment)
+document.getElementById('delete-post').addEventListener('click', deletePost)
+document.getElementById('delete-comment').addEventListener('click', deleteComment)
 

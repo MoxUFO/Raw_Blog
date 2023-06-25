@@ -35,7 +35,7 @@ try {
     return comments
   }
   let allComments = filteredComments()
-  // console.log(allComments);
+  console.log(allComments);
 
   // console.log(isCreator);
   let soloPost = postsData.get({plain:true})
@@ -102,6 +102,25 @@ router.get('/:postId/comment' ,withAuth, async (req, res) => {
       res.status(400).json(err);
     }
   });  
+
+  router.get('/:postId/comment' ,withAuth, async (req, res) => {
+    res.render('comments');
+    });
+  
+    router.delete('/:postId/comment', withAuth, async (req, res) => {
+      console.log(req.body);
+      try {
+        const removedComment = await Comment.destroy({
+       where :{
+        id: req.body.commentCode
+       }
+        });
+    
+        res.status(200).json(removedComment);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+    });  
 
 
 
