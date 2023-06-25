@@ -47,7 +47,7 @@ try {
   }
 
   let thePost = post()
-  console.log(thePost);
+  // console.log(thePost);
   res.render('post', {
     thePost,
     allComments,
@@ -58,6 +58,29 @@ try {
 } catch (error) {
   console.log(error);
 }
+});
+
+router.delete('/:postId', withAuth, async (req, res) => {
+  // console.log(req.session.user_id);
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.postId,
+        user_id: req.session.user_id,
+      },
+    });
+    // console.log(postData);
+    console.log('========================');
+    if (!postData) {
+      res.status(404).json({ message: 'No project found with this id!' });
+      return;
+    }
+
+    res.status(200).json(postData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
