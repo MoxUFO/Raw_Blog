@@ -32,7 +32,7 @@ npm i
 
 ## Usage
 
-To use this app head to the link (), you will be prompted to login or signup, new user use the latter method.
+To use this app head to the link (https://arcane-peak-63722-0df1fb2e7ba8.herokuapp.com/api/users/login), you will be prompted to login or signup, new user use the latter method.
 Once sign up is complete user will be on their home screen showing all post authored by the current user or
 none if they need to create a first time post. Near the top user will see a "nav bar" with write post, dashboard,
 or logout where they can choose to to write a new post. Next is the dashboard that show post created by all user.
@@ -61,7 +61,7 @@ If you have any question about the repo, open an issue or contact me at [MoxUFO]
 
 ## Links
 
-Link to live site: 
+Link to live site: https://arcane-peak-63722-0df1fb2e7ba8.herokuapp.com/api/users/login
 
 ## Images
 
