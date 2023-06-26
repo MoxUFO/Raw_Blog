@@ -60,8 +60,30 @@ const deleteComment = async (event) => {
   }
 }
 
+const editPost = async (event) => {
+  event.preventDefault()
+  console.log(event);
+  // let commentCode = event.target.dataset.commentCode
+  // console.log(event.target.dataset.commentCode);
+  const response = await fetch(`/post/${postId}/editPost`, {
+    method: 'GET',
+    // body: JSON.stringify({ commentCode }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  console.log(response);
+  if (response.ok) {
+    console.log('success');
+    document.location.replace(`/post/${postId}/editPost`);
+  } else {
+    alert('failed to get!');
+  }
+}
+
 
 document.getElementById('make-comment').addEventListener('click', renderComment)
+document.getElementById('edit-post').addEventListener('click',editPost)
 document.getElementById('delete-post').addEventListener('click', deletePost)
 document.getElementById('delete-comment').addEventListener('click', deleteComment)
 

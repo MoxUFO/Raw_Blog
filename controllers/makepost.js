@@ -4,7 +4,8 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/' ,withAuth, async (req, res) => {
-  res.render('makepost');
+  console.log(req);
+  // res.render('makepost');
   });
 
   router.post('/', withAuth, async (req, res) => {

@@ -1,0 +1,28 @@
+    <nav class="tablets">
+        <ul class="nav justify-content-end nav-underline">
+          <li class="nav-item">
+            <a class="nav-link active text-success" href="/">Homepage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-success " href="/dashboard">Dash board</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-success" id="log-out-btn" href="">Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <main class="all-post">
+        <input type="text" class="form-control form-control-lg" id="post-title" type="text" placeholder="Post title" >
+        <textarea type="text" style="height: 100px" class="form-control form-control-lg" id="post-body" type="text" placeholder="Post body" ></textarea>
+      </main>
+      <section class="com-sec">
+          <div class="d-grid gap-2">
+              <button class="btn btn-success" id="edit-post" type="button">Submit post</button>
+            </div>  
+      </section>
+      <section class="com-sec">
+        {{!-- post deets --}}
+      </section>
+
+      <script src="/js/editpost.js"></script>
+      <script src="/js/logout.js"></script>

@@ -35,7 +35,7 @@ try {
     return comments
   }
   let allComments = filteredComments()
-  console.log(allComments);
+  // console.log(allComments);
 
   // console.log(isCreator);
   let soloPost = postsData.get({plain:true})
@@ -78,7 +78,7 @@ router.delete('/:postId', withAuth, async (req, res) => {
 
     res.status(200).json(postData);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json(err);
   }
 });
@@ -106,6 +106,36 @@ router.get('/:postId/comment' ,withAuth, async (req, res) => {
   router.get('/:postId/comment' ,withAuth, async (req, res) => {
     res.render('comments');
     });
+
+    router.get('/:postId/editPost', withAuth, async (req, res) => {
+      // console.log('here');
+      // console.log(req);
+      res.render('editpost')
+      // try {
+      //   const removedComment = await Post.update({
+      
+      //   });
+    
+      //   res.status(200).json(removedComment);
+      // } catch (err) {
+      //   res.status(400).json(err);
+      // }
+    });  
+
+    router.put('/:postId/editPost', withAuth, async (req, res) => {
+      // console.log('here');
+      // console.log(req);
+      // res.status(200)
+      // res.render('editpost')
+      try {
+        const editedPost = await Post.update({post_title: req.body.postTitle, post_text: req.body.postBody },{ where :{ id : req.params.postId}});
+    
+        res.status(200).json(editedPost);
+      } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+      }
+    });  
   
     router.delete('/:postId/comment', withAuth, async (req, res) => {
       console.log(req.body);
